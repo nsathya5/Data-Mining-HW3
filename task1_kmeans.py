@@ -179,7 +179,7 @@ class KMeansVariant:
                     if sse_increase:
                         last_sse = last_sse
                     else:
-                        # Max iterations reached, use new centroids
+                        #new centroids
                         C = C_new
                         last_sse = sse
                     self.n_iter_ = it

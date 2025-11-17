@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-"""Plotting functions for Task 2 recommender system experiments."""
+#Task2 plots
 
 from pathlib import Path
 from typing import List
@@ -15,14 +14,13 @@ def ensure_results_dir() -> None:
 
 
 def plot_similarity_bar_charts(results: List) -> None:
-    """Create 2 separate bar charts for similarity metrics (RMSE and MAE)."""
     ensure_results_dir()
     
     sims = ["cosine", "msd", "pearson"]
     x_pos = np.arange(len(sims))
     width = 0.35
     
-    # Prepare data
+    #Prepare data
     user_rmse, item_rmse, user_mae, item_mae = [], [], [], []
     
     for sim_name in sims:
@@ -35,7 +33,7 @@ def plot_similarity_bar_charts(results: List) -> None:
                     item_rmse.append(r.rmse)
                     item_mae.append(r.mae)
     
-    # Create RMSE bar chart
+    #Creating RMSE bar chart
     fig, ax = plt.subplots(figsize=(8, 5))
     ax.bar(x_pos - width/2, user_rmse, width, label="UserCF", color="orange", alpha=0.8)
     ax.bar(x_pos + width/2, item_rmse, width, label="ItemCF", color="blue", alpha=0.8)
@@ -52,7 +50,7 @@ def plot_similarity_bar_charts(results: List) -> None:
     plt.close()
     print(f"[Task2] Saved RMSE bar chart to {output_path}")
     
-    # Create MAE bar chart
+    #Creating MAE bar chart
     fig, ax = plt.subplots(figsize=(8, 5))
     ax.bar(x_pos - width/2, user_mae, width, label="UserCF", color="orange", alpha=0.8)
     ax.bar(x_pos + width/2, item_mae, width, label="ItemCF", color="blue", alpha=0.8)
@@ -71,7 +69,6 @@ def plot_similarity_bar_charts(results: List) -> None:
 
 
 def plot_neighbor_sweep(results: List, neighbors: List[int]) -> None:
-    """Create 2 separate line charts for neighbor sweep (RMSE and MAE)."""
     ensure_results_dir()
     
     k_values = sorted(neighbors)
@@ -87,7 +84,7 @@ def plot_neighbor_sweep(results: List, neighbors: List[int]) -> None:
                     item_rmse.append(r.rmse)
                     item_mae.append(r.mae)
     
-    # Create RMSE line chart
+    #Creating RMSE line chart
     fig, ax = plt.subplots(figsize=(8, 5))
     ax.plot(k_values, item_rmse, marker="o", label="ItemCF", linewidth=2, markersize=8, color="blue")
     ax.plot(k_values, user_rmse, marker="o", label="UserCF", linewidth=2, markersize=8, color="orange")
@@ -103,7 +100,7 @@ def plot_neighbor_sweep(results: List, neighbors: List[int]) -> None:
     plt.close()
     print(f"[Task2] Saved RMSE line chart to {output_path}")
     
-    # Create MAE line chart
+    #Creating MAE line chart
     fig, ax = plt.subplots(figsize=(8, 5))
     ax.plot(k_values, item_mae, marker="o", label="ItemCF", linewidth=2, markersize=8, color="blue")
     ax.plot(k_values, user_mae, marker="o", label="UserCF", linewidth=2, markersize=8, color="orange")
