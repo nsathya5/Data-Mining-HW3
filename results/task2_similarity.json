@@ -1,0 +1,38 @@
+[
+  {
+    "model": "UserCF",
+    "detail": "sim=cosine",
+    "mae": 0.7678336111826972,
+    "rmse": 0.9934849966492136
+  },
+  {
+    "model": "ItemCF",
+    "detail": "sim=cosine",
+    "mae": 0.7750780175130063,
+    "rmse": 0.9955427191488118
+  },
+  {
+    "model": "UserCF",
+    "detail": "sim=msd",
+    "mae": 0.74454514579334,
+    "rmse": 0.9680193818979161
+  },
+  {
+    "model": "ItemCF",
+    "detail": "sim=msd",
+    "mae": 0.7213352792483354,
+    "rmse": 0.9346912695798839
+  },
+  {
+    "model": "UserCF",
+    "detail": "sim=pearson",
+    "mae": 0.773210340664606,
+    "rmse": 0.9989774306081465
+  },
+  {
+    "model": "ItemCF",
+    "detail": "sim=pearson",
+    "mae": 0.7676820938051845,
+    "rmse": 0.9885052422388044
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "model": "PMF",
+    "detail": "baseline",
+    "mae": 0.755730560210482,
+    "rmse": 0.9832118922577227
+  },
+  {
+    "model": "UserCF",
+    "detail": "baseline",
+    "mae": 0.7678336111826972,
+    "rmse": 0.9934849966492136
+  },
+  {
+    "model": "ItemCF",
+    "detail": "baseline",
+    "mae": 0.7750780175130063,
+    "rmse": 0.9955427191488118
+  }
+]
